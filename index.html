@@ -655,6 +655,42 @@
         transform: translateY(-1px);
       }
 
+
+    /* ── GIFT REGISTRY ── */
+    #gifts { text-align:center; max-width:100%; background:linear-gradient(180deg,rgba(247,232,232,.92),rgba(242,224,224,.96)); }
+    #gifts .inner { max-width:900px; margin:0 auto; }
+    #gifts .gold-line { margin:0 auto 2.5rem; }
+    .gift-intro { max-width:650px; margin:0 auto 3rem; color:var(--muted); font-size:1.12rem; line-height:1.8; }
+    .gift-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.25rem; text-align:left; }
+    .gift-card { display:flex; flex-direction:column; min-height:235px; padding:1.6rem; background:rgba(255,255,255,.78); border:1px solid rgba(74,94,58,.16); border-radius:20px; box-shadow:0 8px 28px rgba(74,94,58,.05); transition:.25s ease; }
+    .gift-card:hover { transform:translateY(-3px); box-shadow:0 14px 34px rgba(74,94,58,.09); }
+    .gift-card.claimed { opacity:.78; }
+    .gift-icon { font-size:1.8rem; margin-bottom:.7rem; }
+    .gift-name { font-family:'Cormorant Garamond',serif; font-size:1.45rem; color:var(--deep); line-height:1.25; }
+    .gift-description { margin-top:.45rem; color:var(--muted); line-height:1.55; font-size:.95rem; flex:1; }
+    .gift-status { margin-top:1rem; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--gold); }
+    .gift-status.claimed { color:var(--muted); }
+    .gift-actions { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1rem; }
+    .gift-button { display:inline-flex; align-items:center; justify-content:center; min-height:40px; padding:.65rem 1rem; border-radius:999px; border:1px solid rgba(74,94,58,.22); background:rgba(255,255,255,.92); color:var(--gold); font-family:'Cormorant Garamond',serif; font-size:.72rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; text-decoration:none; cursor:pointer; }
+    .gift-button:hover { background:var(--gold); color:var(--cream); }
+    .gift-button.primary { background:var(--gold); color:var(--cream); }
+    .gift-button.primary:hover { background:var(--deep); }
+    .gift-button:disabled { opacity:.55; cursor:not-allowed; }
+    .gift-note { margin-top:1.4rem; font-size:.78rem; color:var(--muted); font-style:italic; }
+    .gift-modal-backdrop { position:fixed; inset:0; z-index:10001; display:none; align-items:center; justify-content:center; padding:1.25rem; background:rgba(45,59,34,.42); backdrop-filter:blur(5px); }
+    .gift-modal-backdrop.open { display:flex; }
+    .gift-modal { width:min(440px,100%); padding:2rem; background:var(--warm-white); border:1px solid var(--border); border-radius:22px; box-shadow:0 24px 70px rgba(0,0,0,.2); text-align:left; }
+    .gift-modal h3 { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:500; color:var(--deep); margin-bottom:.5rem; }
+    .gift-modal p { color:var(--muted); line-height:1.6; margin-bottom:1.2rem; }
+    .gift-modal input { width:100%; padding:.8rem .2rem; border:0; border-bottom:1px solid #aaa; background:transparent; font:1rem 'EB Garamond',serif; color:var(--deep); outline:none; }
+    .gift-modal input:focus { border-bottom:2px solid var(--gold); }
+    .gift-modal-actions { display:flex; gap:.7rem; margin-top:1.4rem; justify-content:flex-end; }
+    .gift-qr-wrap { margin:2.8rem auto 0; max-width:520px; padding:1.6rem; background:rgba(255,255,255,.76); border:1px solid rgba(74,94,58,.16); border-radius:22px; box-shadow:0 8px 28px rgba(74,94,58,.05); }
+    .gift-qr-title { font-family:'Cormorant Garamond',serif; font-size:1.7rem; color:var(--deep); margin-bottom:.6rem; }
+    .gift-qr-copy { color:var(--muted); line-height:1.7; margin-bottom:1.2rem; }
+    .gift-qr { width:min(100%,360px); margin:0 auto; border-radius:16px; background:#fff; padding:.6rem; }
+    .gift-qr-name { margin-top:.9rem; color:var(--deep); font-size:.95rem; font-weight:600; }
+
     /* ── FOOTER ── */
     footer {
       text-align: center;
@@ -1395,6 +1431,51 @@
     </div>
   </section>
 
+
+  <hr class="section-divider">
+
+  <!-- GIFT REGISTRY -->
+  <section id="gifts">
+    <div class="inner">
+      <span class="section-label reveal">Gifts · Hadiah</span>
+      <h2 class="section-title reveal">A little <em>something</em> for our new home</h2>
+      <div class="gold-line reveal"></div>
+      <p class="gift-intro reveal">
+        Your presence is already the greatest gift. If you would like to bless us with something for our new journey together,
+        we've prepared a few ideas. Gift links can be added later.
+      </p>
+      <div class="gift-grid reveal" id="giftGrid">
+        <p class="no-entries">Loading gifts... · Memuatkan hadiah...</p>
+      </div>
+      <p class="gift-note reveal">
+        Once a guest confirms a gift, it will be marked as purchased so another guest can choose something else.
+      </p>
+
+      <div class="gift-qr-wrap reveal">
+        <div class="gift-qr-title">💝 Kaut Tangan</div>
+        <p class="gift-qr-copy">
+          For anyone who would like to give a cash gift, you may scan the QR below.
+          Terima kasih atas doa dan ingatan anda untuk kami. ❤️
+        </p>
+        <img class="gift-qr" src="gift-qr.svg" alt="Ryt Bank QR code for wedding cash gift" loading="lazy">
+        <div class="gift-qr-name">Muhammad Syamaail Nizami Bin Suhaimi</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gift-modal-backdrop" id="giftModal" role="dialog" aria-modal="true" aria-labelledby="giftModalTitle">
+    <div class="gift-modal">
+      <h3 id="giftModalTitle">Confirm your gift</h3>
+      <p id="giftModalText">Enter your name to reserve this gift.</p>
+      <input id="giftClaimName" type="text" maxlength="80" placeholder="Your name / Nama anda" autocomplete="name">
+      <div class="gift-modal-actions">
+        <button type="button" class="gift-button" id="giftCancelBtn">Cancel</button>
+        <button type="button" class="gift-button primary" id="giftConfirmBtn">Confirm Gift</button>
+      </div>
+      <p id="giftClaimStatus" class="gift-note" aria-live="polite"></p>
+    </div>
+  </div>
+
   <footer>
     <div class="footer-names">Syamaail &amp; Anis Nadhirah</div>
     <div class="footer-sub">26 · 12 · 2026 &nbsp;·&nbsp; Nexus Space, Puncak Alam</div>
@@ -1690,6 +1771,66 @@
       document.body.removeChild(link);
     }
 
+
+
+    // ── GIFT REGISTRY (Supabase) ──
+    const giftGrid=document.getElementById('giftGrid');
+    const giftModal=document.getElementById('giftModal');
+    const giftClaimName=document.getElementById('giftClaimName');
+    const giftClaimStatus=document.getElementById('giftClaimStatus');
+    const giftConfirmBtn=document.getElementById('giftConfirmBtn');
+    const giftCancelBtn=document.getElementById('giftCancelBtn');
+    let selectedGiftId=null;
+    let giftItems=[];
+
+    function escapeHtml(v){return String(v).replace(/[&<>"']/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]);});}
+
+    async function loadGiftRegistry(){
+      try{
+        const cfg=await fetch('gift-registry.json',{cache:'no-store'}).then(r=>r.json());
+        giftItems=cfg;
+        const res=await sbFetch('/rest/v1/gift_registry?select=id,claimed_by,claimed_at');
+        const claimed=res.ok?await res.json():[];
+        const map={}; claimed.forEach(x=>map[x.id]=x);
+        giftGrid.innerHTML=giftItems.map(function(g){
+          const row=map[g.id]||{}, claimed=!!row.claimed_by, url=g.url&&g.url!=='#'?g.url:'';
+          return '<article class="gift-card '+(claimed?'claimed':'')+'">'+
+            '<div class="gift-icon">'+(g.icon||'🎁')+'</div>'+
+            '<div class="gift-name">'+escapeHtml(g.name)+'</div>'+
+            '<div class="gift-description">'+escapeHtml(g.description||'')+'</div>'+
+            '<div class="gift-status '+(claimed?'claimed':'')+'">'+(claimed?'🔴 Purchased by '+escapeHtml(row.claimed_by):'🟢 Available')+'</div>'+
+            '<div class="gift-actions">'+
+              (url?'<a class="gift-button" href="'+escapeHtml(url)+'" target="_blank" rel="noopener">View Gift</a>':'<button class="gift-button" disabled>Link Coming Soon</button>')+
+              (!claimed?'<button class="gift-button primary" type="button" data-gift-id="'+escapeHtml(g.id)+'">I\'ll Gift This</button>':'')+
+            '</div></article>';
+        }).join('');
+        giftGrid.querySelectorAll('[data-gift-id]').forEach(function(btn){btn.addEventListener('click',function(){openGiftClaim(btn.dataset.giftId);});});
+      }catch(err){console.error('Gift registry load error:',err);giftGrid.innerHTML='<p class="no-entries">Could not load gifts. · Tidak dapat memuatkan hadiah.</p>';}
+    }
+
+    function openGiftClaim(id){
+      const gift=giftItems.find(x=>x.id===id); if(!gift)return;
+      selectedGiftId=id; document.getElementById('giftModalTitle').textContent='Reserve '+gift.name;
+      document.getElementById('giftModalText').textContent='Enter your name to let the couple know you are taking this gift.';
+      giftClaimName.value=''; giftClaimStatus.textContent=''; giftModal.classList.add('open');
+      setTimeout(function(){giftClaimName.focus();},50);
+    }
+    function closeGiftClaim(){selectedGiftId=null;giftModal.classList.remove('open');giftClaimStatus.textContent='';}
+    async function confirmGiftClaim(){
+      const name=giftClaimName.value.trim(); if(!selectedGiftId||!name){giftClaimStatus.textContent='Please enter your name. · Sila masukkan nama anda.';return;}
+      giftConfirmBtn.disabled=true; giftClaimStatus.textContent='Saving... · Menyimpan...';
+      try{
+        const res=await sbFetch('/rest/v1/rpc/claim_gift',{method:'POST',body:JSON.stringify({p_gift_id:selectedGiftId,p_name:name})});
+        if(!res.ok){giftClaimStatus.textContent=res.status===409?'Sorry, someone has already claimed this gift. Please choose another one.':'Something went wrong. Please try again.';return;}
+        closeGiftClaim(); await loadGiftRegistry();
+      }catch(err){console.error('Gift claim error:',err);giftClaimStatus.textContent='Connection error. Please try again.';}
+      finally{giftConfirmBtn.disabled=false;}
+    }
+    giftCancelBtn?.addEventListener('click',closeGiftClaim);
+    giftConfirmBtn?.addEventListener('click',confirmGiftClaim);
+    giftModal?.addEventListener('click',function(e){if(e.target===giftModal)closeGiftClaim();});
+    giftClaimName?.addEventListener('keydown',function(e){if(e.key==='Enter')confirmGiftClaim();if(e.key==='Escape')closeGiftClaim();});
+    loadGiftRegistry();
 
     // ── VISITOR COUNTER via CountAPI ──
     fetch('https://api.counterapi.dev/v1/syamaail-anis-wedding/visits/up')
