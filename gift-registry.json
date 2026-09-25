@@ -1,51 +1,16 @@
 [
   {
-    "id": "rice-cooker",
-    "icon": "🍚",
-    "name": "Rice Cooker",
-    "description": "A little something for our future kitchen.",
-    "url": "#"
-  },
-  {
-    "id": "air-fryer",
-    "icon": "🍳",
-    "name": "Air Fryer",
-    "description": "For our future kitchen adventures.",
-    "url": "#"
-  },
-  {
-    "id": "robot-vacuum",
-    "icon": "🧹",
-    "name": "Robot Vacuum",
-    "description": "Because the floor doesn't clean itself. 😄",
-    "url": "#"
-  },
-  {
-    "id": "bedsheet-set",
-    "icon": "🛏️",
-    "name": "Bedsheet Set",
-    "description": "Something cosy for our new home.",
-    "url": "#"
-  },
-  {
-    "id": "dinnerware-set",
-    "icon": "🍽️",
-    "name": "Dinnerware Set",
-    "description": "For future meals together.",
-    "url": "#"
-  },
-  {
-    "id": "home-decor",
-    "icon": "🏠",
-    "name": "Home Décor",
-    "description": "A little piece for our new place.",
-    "url": "#"
-  },
-  {
     "id": "gas-stove",
     "icon": "🔥",
     "name": "Double Burner Gas Stove",
     "description": "Electrova stainless steel double burner stove for our future kitchen.",
     "url": "https://s.shopee.com.my/60RsHZSljn?share_channel_code=1"
+  },
+  {
+    "id": "sample-gift",
+    "icon": "🎁",
+    "name": "Sample Gift",
+    "description": "Example placeholder for the next gift we add.",
+    "url": "#"
   }
 ]
