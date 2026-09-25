@@ -913,7 +913,16 @@
   }
 
   /* GIFTS */
-  #gifts { padding: 4rem 1.3rem; }
+  #gifts { padding: 4rem 1.3rem; scroll-margin-top: 80px; }
+  /* Keep the Gift Registry visible on mobile even if scroll-reveal is delayed. */
+  #gifts .reveal { opacity: 1; transform: none; }
+  nav a[href="#gifts"] {
+    color: var(--gold);
+    border: 1px solid rgba(74,94,58,.22);
+    border-radius: 999px;
+    padding: .3rem .65rem;
+    background: rgba(255,255,255,.55);
+  }
   #gifts .inner { width: 100%; }
   .gift-intro { font-size: 1rem; line-height: 1.7; margin-bottom: 2rem; }
   .gift-grid { grid-template-columns: 1fr; gap: 1rem; }
