@@ -1,0 +1,8 @@
+[
+  {"id":"rice-cooker","icon":"🍚","name":"Rice Cooker","description":"A little something for our future kitchen.","url":"#"},
+  {"id":"air-fryer","icon":"🍳","name":"Air Fryer","description":"For our future kitchen adventures.","url":"#"},
+  {"id":"robot-vacuum","icon":"🧹","name":"Robot Vacuum","description":"Because the floor doesn't clean itself. 😄","url":"#"},
+  {"id":"bedsheet-set","icon":"🛏️","name":"Bedsheet Set","description":"Something cosy for our new home.","url":"#"},
+  {"id":"dinnerware-set","icon":"🍽️","name":"Dinnerware Set","description":"For future meals together.","url":"#"},
+  {"id":"home-decor","icon":"🏠","name":"Home Décor","description":"A little piece for our new place.","url":"#"}
+]
