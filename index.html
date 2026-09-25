@@ -912,35 +912,37 @@
     font-size: 0.9rem;
   }
 
-  /* GIFTS */
-  #gifts { padding: 4rem 1.3rem; scroll-margin-top: 80px; }
-  /* Keep the Gift Registry visible on mobile even if scroll-reveal is delayed. */
-  #gifts .reveal { opacity: 1; transform: none; }
+  /* GIFTS - mobile-first, Android + iOS safe */
+  #gifts {
+    padding: 4rem 1.3rem;
+    scroll-margin-top: 80px;
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
+  #gifts .inner { width: 100%; }
+  #gifts .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+  #gifts .gift-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    min-height: 1px;
+  }
+  #gifts .gift-card {
+    display: flex;
+    width: 100%;
+  }
   nav a[href="#gifts"] {
     color: var(--gold);
     border: 1px solid rgba(74,94,58,.22);
     border-radius: 999px;
-    padding: .3rem .65rem;
-    background: rgba(255,255,255,.55);
+    padding: .35rem .7rem;
+    background: rgba(255,255,255,.7);
   }
-  #gifts .inner { width: 100%; }
-  .gift-intro { font-size: 1rem; line-height: 1.7; margin-bottom: 2rem; }
-  .gift-grid { grid-template-columns: 1fr; gap: 1rem; }
-  .gift-card { min-height: 0; padding: 1.35rem; border-radius: 18px; }
-  .gift-name { font-size: 1.35rem; }
-  .gift-description { font-size: .95rem; line-height: 1.55; }
-  .gift-actions { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
-  .gift-button { width: 100%; min-height: 46px; padding: .7rem .75rem; font-size: .68rem; letter-spacing: .1em; }
-  .gift-note { font-size: .78rem; line-height: 1.6; }
-  .gift-qr-wrap { width: 100%; margin-top: 2rem; padding: 1.2rem; border-radius: 18px; }
-  .gift-qr-title { font-size: 1.5rem; }
-  .gift-qr-copy { font-size: .95rem; line-height: 1.65; }
-  .gift-qr { width: min(100%, 300px); padding: .5rem; }
-  .gift-qr-name { font-size: .88rem; overflow-wrap: anywhere; }
-  .gift-modal { padding: 1.5rem; border-radius: 18px; }
-  .gift-modal h3 { font-size: 1.6rem; }
-  .gift-modal-actions { display: grid; grid-template-columns: 1fr 1fr; }
-  .gift-modal-actions .gift-button { width: 100%; }
 
   /* RSVP */
   #rsvp {
